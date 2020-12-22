@@ -94,8 +94,11 @@ class LdaSummarizer():
                     if topic == s_topic and sent_prob >= prob:
                         prob = sent_prob
                         topic_sent_id = i
-            #save id of selected sentence for given topic
-            summary_sent_id.append(topic_sent_id)
+
+            #save id of selected sentence for given topic as long as one exists
+            if topic_sent_id is not None:
+                summary_sent_id.append(topic_sent_id)
+
         #generate summary
         self.summary = " ".join([self.sentences[i] for i in sorted(summary_sent_id)])
 
@@ -114,6 +117,10 @@ class LdaSummarizer():
 
 #runs summarization process on pandas dataframe column
 def summarize_pd(text, n=5, sent_len_penalty=False):
-    summarizer =  LdaSummarizer(text, summary_size=n, sent_len_penalty=sent_len_penalty)
-    summarizer.summarize()
+    try:
+        summarizer =  LdaSummarizer(text, summary_size=n, sent_len_penalty=sent_len_penalty)
+        summarizer.summarize()
+    except:
+        print(text)
+
     return summarizer.summary
