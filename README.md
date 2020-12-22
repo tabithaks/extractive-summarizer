@@ -10,10 +10,10 @@ Topic based extractive summarizer built to summarize UN General Assembly Stateme
 
 ### Answers to Questions (these are also at the top of the notebook Time_and_Sentence_Length_Analysis.ipynb)
 
-a) Approach to the problem
+a) Approach to the problem:
 Summaries describe the main ideas in a text, and I approached the problem with the objective of finding sentences that best cover the main topics discussed in each speech. With that in mind, for each speech, topic analysis (latent dirchlet allocation) was used to determine what the main topics were. The most discussed topics (based on the number of sentences a topic came up in) were then selected, and the sentence with the highest probability for each of these topics found. These sentence were extracted, ordered based on their when they came up in the orginal text, and put together as a summary. 
 
-b) Measuring performance.
+b) Measuring performance:
 Below are possible ways to evaluate performance in this problem. Without extensive resources, I would start with the qualitative approach (perhaps developing a rubric for consistency) on a very small number of randomly selected text. Then I would then use the transfer approach in order to have a metric to compare this summarization method to others.
 
 - Qualitative approach: an individual comparing output to actual text on a small subset of the data
