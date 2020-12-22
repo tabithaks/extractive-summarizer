@@ -4,7 +4,7 @@ Topic based extractive summarizer built to summarize UN General Assembly Stateme
 ### Sitemap
 - `summarize.py`: Contains code for summarization, including LdaSummarizer class
 - `Time_and_Sentence_Length_Analysis.ipynb`: Contains analysis of time it takes to summarize and sentence length penalty (penalizing longer sentences, making them less likely to be inlcuded in the summary).
-- `un_debates_summarize.py`: Script to run summarization on all UN General Assembly Statements, saves summaries in summary column and writes to csv file
+- `un_debates_summarize.py`: Script to run summarization on first 100 UN General Assembly Statements, saves summaries in summary column and writes to csv file. Easily modifiable for any subset of the data/all the data.
 - `un-general-debates-100-summaries.csv`: Csv file of first 100 debates that includes summaries in column headed "summary"
 
 ### Answers to Questions (these are also at the top of the notebook Time_and_Sentence_Length_Analysis.ipynb)
